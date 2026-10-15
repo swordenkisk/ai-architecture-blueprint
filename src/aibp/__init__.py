@@ -1,0 +1,3 @@
+"""AI Architecture Blueprint."""
+
+__version__ = "0.1.0"

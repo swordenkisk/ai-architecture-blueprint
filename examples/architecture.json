@@ -1,0 +1,74 @@
+{
+  "project": {
+    "name": "Support Knowledge Assistant",
+    "goal": "Answer support questions using approved company documentation.",
+    "users": "Internal support team",
+    "deployment_target": "Container platform"
+  },
+  "requirements": {
+    "expected_users": 1000,
+    "availability_target": "99.9%",
+    "data_sensitivity": "Internal"
+  },
+  "layers": {
+    "data_ingestion": [
+      "Scheduled document ingestion",
+      "REST API connector",
+      "Schema and file-type validation"
+    ],
+    "storage_processing": [
+      "PostgreSQL for application data",
+      "Object storage for source documents",
+      "Background processing queue"
+    ],
+    "retrieval": [
+      "Document chunking and embedding generation",
+      "pgvector similarity search",
+      "Metadata filters and source references"
+    ],
+    "models": [
+      "Hosted language model behind a provider adapter",
+      "Versioned prompts",
+      "Retrieval and answer-quality evaluation"
+    ],
+    "orchestration": [
+      "Bounded retrieval-and-answer workflow",
+      "Tool access restricted to approved operations"
+    ],
+    "application_api": [
+      "REST API",
+      "Internal web client",
+      "Health-check endpoint"
+    ],
+    "integrations": [
+      "Company identity provider",
+      "Document management system"
+    ],
+    "security_governance": [
+      "Role-based access control",
+      "Document-level access filtering",
+      "PII handling and retention policy"
+    ],
+    "infrastructure_observability": [
+      "Containerized application",
+      "CI pipeline",
+      "Centralized application telemetry"
+    ]
+  },
+  "controls": {
+    "authentication": true,
+    "authorization": true,
+    "secrets_management": true,
+    "encryption_at_rest": true,
+    "encryption_in_transit": true,
+    "audit_logging": true,
+    "backups": true,
+    "ci_cd": true,
+    "observability": [
+      "logs",
+      "metrics",
+      "traces"
+    ],
+    "human_approval_for_high_impact_actions": true
+  }
+}

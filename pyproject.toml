@@ -1,0 +1,19 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ai-architecture-blueprint"
+version = "0.1.0"
+description = "Validate AI system architecture plans against a practical nine-layer blueprint."
+readme = "README.md"
+requires-python = ">=3.11"
+license = { text = "MIT" }
+authors = [{ name = "AI Architecture Blueprint Contributors" }]
+dependencies = []
+
+[project.scripts]
+aibp = "aibp.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
